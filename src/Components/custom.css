@@ -1,0 +1,57 @@
+.sidebar{
+    background-color: #5B69C6;
+}
+
+.card1{
+    background-color: #E2E6FF;
+    border-radius: 2rem;
+    align-content: center;
+}
+
+.card2{
+    border-radius: 1rem;
+    border-color: white;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.pointer:hover{
+    color: 
+    #CB7EAE;
+}
+
+.littlecard{
+    background-color: #F3F4FF;
+    border-radius: 20px;
+    border: #F3F4FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.littlecard2{
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: #F3F4FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.badge{
+    background-color: #5B69C6;
+}
+
+.navbar-nav{
+    color: #adb1b8
+}
+
+.help{
+    padding-left: 0px;
+}
+
+.taskcard{
+    background: #E2E6FF;
+    border-radius: 55px 55px 0px 0px;
+    width: 85vw;
+    height: 90vh;
+    position: absolute;
+}
