@@ -13,6 +13,7 @@ import { Login } from "./Components/Auth/Login";
 import { Registration } from "./Components/Auth/Registration";
 import ProjectsPage from "./Components/Projects/ProjectsPage";
 import { Profile } from "./Components/Profile";
+import { Notifications } from "./Components/Notifications/NotificationsPage";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/registration" element={<Registration></Registration>}></Route>
         <Route path="/projects" element={<ProjectsPage></ProjectsPage>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
+        <Route path="/notifications" element={<Notifications></Notifications>}></Route>
       </Routes>
     </Router>
     </>
