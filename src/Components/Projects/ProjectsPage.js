@@ -50,17 +50,17 @@ export default function ProjectsPage() {
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Название" className="mb-3" onChange={e => {setCreateName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Название" className="mb-3 customInput" onChange={e => {setCreateName(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
-                            <Form.Control placeholder="Описание" onChange={e => {setCreateDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Описание" className="customInput" onChange={e => {setCreateDesc(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="light" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Отмена
                         </Button>
-                        <Button variant="outline-primary" onClick={() =>  CreateProject()}>
+                        <Button variant="pink" onClick={() =>  CreateProject()}>
                         Сохранить
                         </Button>
                     </Modal.Footer>
@@ -75,17 +75,17 @@ export default function ProjectsPage() {
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Новое название" className="mb-3" onChange={e => {setNewName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Новое название" className="mb-3 customInput" onChange={e => {setNewName(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
-                            <Form.Control placeholder="Новое описание" onChange={e => {setNewDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Новое описание" className="customInput" onChange={e => {setNewDesc(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="light" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Отмена
                         </Button>
-                        <Button variant="outline-warning" onClick={() =>  EditProject(id)}>
+                        <Button variant="green" onClick={() =>  EditProject(id)}>
                         Сохранить
                         </Button>
                     </Modal.Footer>
@@ -100,10 +100,10 @@ export default function ProjectsPage() {
                      <Modal.Title style={{ color: '#5B69C6' }}>Вы уверены что хотите удалить проект "{name}"?</Modal.Title>
                     </Modal.Header>
                     <Modal.Footer>
-                        <Button variant="light" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Отмена
                         </Button>
-                        <Button variant="outline-danger" onClick={() =>  DeleteProject(id)}>
+                        <Button variant="red" onClick={() =>  DeleteProject(id)}>
                         Да
                         </Button>
                     </Modal.Footer>
@@ -185,7 +185,7 @@ export default function ProjectsPage() {
                                         </Col>
                                         <Col>
                                             <Dropdown className="d-inline mx-2">
-                                            <Dropdown.Toggle variant="light" id="dropdown-autoclose-true">
+                                            <Dropdown.Toggle variant="white" className="customButtonLight" id="dropdown-autoclose-true">
                                             Действия
                                             </Dropdown.Toggle>
 

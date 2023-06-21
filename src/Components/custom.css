@@ -56,3 +56,38 @@
     height: 90vh;
     position: absolute;
 }
+
+.customInput {
+    background: #F3F4FF;
+    border-radius: 16px;
+}
+
+.btn-blue {
+     background-color: #5B69C6;
+     color: white;
+     border-radius: 16px;
+ }
+
+.btn-pink {
+    background-color: #CB7EAE;
+    color: white;
+    border-radius: 16px;
+}
+
+.btn-green {
+    background-color: #A8C15F;
+    color: white;
+    border-radius: 16px;
+}
+
+.btn-red {
+    background-color: #CE6855;
+    color: white;
+    border-radius: 16px;
+}
+
+.btn-white {
+    background-color: white;
+    color: #5B69C6;
+    border-radius: 16px;
+}

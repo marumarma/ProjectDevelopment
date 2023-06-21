@@ -57,19 +57,19 @@ export const Registration = () => {
                     <Card.Title className="mb-4" style={{ color: '#5B69C6' }}>Регистрация</Card.Title>
                         <Form onSubmit={RegisterRequest}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="name" placeholder="Никнейм" onChange={e => {setNickName(e.target.value)}}/>
+                                <Form.Control type="name" className="customInput" placeholder="Никнейм" onChange={e => {setNickName(e.target.value)}}/>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="email" placeholder="E-mail" onChange={e => {setEmail(e.target.value)}}/>
+                                <Form.Control type="email" className="customInput" placeholder="E-mail" onChange={e => {setEmail(e.target.value)}}/>
                             </Form.Group>
                     
                             <Form.Group className="mb-1" controlId="formBasicPassword">
-                                <Form.Control type="password" placeholder="Пароль" onChange={e => {setpassword(e.target.value)}}/>
+                                <Form.Control type="password" className="customInput" placeholder="Пароль" onChange={e => {setpassword(e.target.value)}}/>
                             </Form.Group>
                             <Form.Text id= "err" className="text-danger">
                             </Form.Text>
                         </Form>
-                        <Button className="mt-3 mb-2" variant="primary" type="submit" onClick={RegisterRequest}>
+                        <Button className="mt-3 mb-2" variant="blue" type="submit" onClick={RegisterRequest}>
                                 Зарегистрироваться
                         </Button>
                     </Card.Body>

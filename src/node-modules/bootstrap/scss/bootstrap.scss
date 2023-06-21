@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 4 | @import '~bootstrap/scss/bootstrap.scss';
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   custom.scss 4:9  root stylesheet */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   ╷\a 4 │ @import '~bootstrap/scss/bootstrap.scss';\a   │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   ╵\a   custom.scss 4:9  root stylesheet";
+}
+
+/*# sourceMappingURL=bootstrap.scss.map */
