@@ -7,7 +7,7 @@ import { Card, Container, Row, Col, Badge } from "react-bootstrap";
 export default function TaskCard() {
   return(
     <Container fluid className="d-flex cont justify-content-md-center mt-2 ">
-        <Card style={{ width: '90vw', height: '90vh' }} className="card1">
+        <Card style={{ width: '90vw', minHeight: '90vh', marginBottom: '10px' }} className="card1">
             <Container className="mt-3">
                 <Row>
                     <Col>

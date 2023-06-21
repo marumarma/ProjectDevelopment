@@ -42,69 +42,69 @@ export default function ProjectsPage() {
     console.log(projects)
 
     function ModalType(name, id, type){
-        if (type == "create"){
+        if (type === "create"){
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>New project</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Новый проект</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Name" className="mb-3" onChange={e => {setCreateName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Название" className="mb-3" onChange={e => {setCreateName(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
-                            <Form.Control placeholder="Description" onChange={e => {setCreateDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Описание" onChange={e => {setCreateDesc(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
-                        Cancel
+                        <Button variant="light" onClick={() => setModalActive({active: false})}>
+                        Отмена
                         </Button>
-                        <Button variant="secondary" onClick={() =>  CreateProject()}>
-                        Save 
+                        <Button variant="outline-primary" onClick={() =>  CreateProject()}>
+                        Сохранить
                         </Button>
                     </Modal.Footer>
                 </>
             )
         }
-        else if (type == "edit"){
+        else if (type === "edit"){
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Edit project "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Редактировать проект "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="New name" className="mb-3" onChange={e => {setNewName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Новое название" className="mb-3" onChange={e => {setNewName(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
-                            <Form.Control placeholder="New description" onChange={e => {setNewDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Новое описание" onChange={e => {setNewDesc(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
-                        Cancel
+                        <Button variant="light" onClick={() => setModalActive({active: false})}>
+                        Отмена
                         </Button>
-                        <Button variant="secondary" onClick={() =>  EditProject(id)}>
-                        Save 
+                        <Button variant="outline-warning" onClick={() =>  EditProject(id)}>
+                        Сохранить
                         </Button>
                     </Modal.Footer>
                 </>
             )
         }
 
-        else if (type == "delete"){
+        else if (type === "delete"){
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Are you sure that you want to delete project "{name}"?</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Вы уверены что хотите удалить проект "{name}"?</Modal.Title>
                     </Modal.Header>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
-                        Cancel
+                        <Button variant="light" onClick={() => setModalActive({active: false})}>
+                        Отмена
                         </Button>
-                        <Button variant="secondary" onClick={() =>  DeleteProject(id)}>
-                        Yes
+                        <Button variant="outline-danger" onClick={() =>  DeleteProject(id)}>
+                        Да
                         </Button>
                     </Modal.Footer>
                 </>
@@ -121,7 +121,7 @@ export default function ProjectsPage() {
         axios.put('https://teamtoolhosting.ru/api/project/' + id, data, {headers: headers}
         ).then((response) => {
             console.log(response.data)
-            if (response.status == 200){
+            if (response.status === 200){
                 document.getElementById(id + "name").textContent = response.data.name
                 document.getElementById(id + "desc").textContent = response.data.description
                 setModalActive(false)
@@ -137,7 +137,7 @@ export default function ProjectsPage() {
         axios.delete('https://teamtoolhosting.ru/api/project/' + id, {headers: headers}
         ).then((response) => {
             console.log(response.data)
-            if (response.status == 200){
+            if (response.status === 200){
                 document.getElementById(id).remove()
                 setModalActive({active:false})
             }
@@ -167,13 +167,13 @@ export default function ProjectsPage() {
   return(
     <>
     <Container fluid className="d-flex cont justify-content-md-center mt-2 ">
-        <Card style={{ width: '50rem', minHeight: '15rem' }} className="card1">
+        <Card style={{ width: '50rem', minHeight: '15rem', marginBottom: '10px' }} className="card1">
             <Container className="d-flex justify-content-md-center">
                     <Col>
-                        <Row>
-                            <h2>My projects <span onClick={() => setModalActive({active: true, type: "create"})} class="pointer">+</span></h2>
+                        <Row style={{marginTop: '10px', marginLeft: '5px'}}>
+                            <h2>Мои проекты <span onClick={() => setModalActive({active: true, type: "create"})} className="pointer">+</span></h2>
                         </Row>
-                        <Row xs={1} md={2} className="" style={{width: '40rem'}}>
+                        <Row xs={1} md={2} className="" style={{width: '50rem'}}>
                         
                         {projects?.map((project, idx) => (
                             <Col key={idx}>
@@ -185,13 +185,13 @@ export default function ProjectsPage() {
                                         </Col>
                                         <Col>
                                             <Dropdown className="d-inline mx-2">
-                                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-autoclose-true">
-                                            Actions
+                                            <Dropdown.Toggle variant="light" id="dropdown-autoclose-true">
+                                            Действия
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu>
-                                            <Dropdown.Item onClick={() => setModalActive({active: true, type: "edit", itemId: project.id, itemName: project.name})}>Edit</Dropdown.Item>
-                                            <Dropdown.Item onClick={() => setModalActive({active: true, type: "delete",  itemId: project.id, itemName: project.name})}>Delete</Dropdown.Item>
+                                            <Dropdown.Item onClick={() => setModalActive({active: true, type: "edit", itemId: project.id, itemName: project.name})}>Редактировать</Dropdown.Item>
+                                            <Dropdown.Item onClick={() => setModalActive({active: true, type: "delete",  itemId: project.id, itemName: project.name})}>Удалить</Dropdown.Item>
                                             </Dropdown.Menu>
                                             </Dropdown>
                                         </Col>

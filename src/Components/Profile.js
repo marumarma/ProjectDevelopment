@@ -69,15 +69,15 @@ export const Profile = () => {
 
     return(
         <>
-             <Container className="d-flex cont justify-content-md-center mt-5">
-                <Card style={{ width: '30rem' }}  className=" text-center card1">
+             <Container className="d-flex cont justify-content-md-center mt-5 ">
+                <Card style={{ width: '30rem', marginBottom: '10px' }}  className=" text-center card1">
                     <Card.Body className="d-flex flex-column">
-                    <Card.Title className="mb-3" style={{color: '#5B69C6'}}>Профиль</Card.Title>
+                    <Card.Title className="mb-3 fw-bold" style={{color: '#5B69C6'}}>Профиль</Card.Title>
                         <Form>
                             <Image src={Avatar()} rounded width={250} height={250} className="mb-3"></Image>
                             <Container className="pl-0">
                             <Row className="help mt-2 mb-3 me-5" style={{color: '#5B69C6'}}>
-                                <Col xs lg={3} className="help">E-mail:</Col>
+                                <Col xs lg={3} className="help fw-bold">E-mail:</Col>
                                 <Col className="help">{profile.email}</Col>
                             </Row>
                             </Container>

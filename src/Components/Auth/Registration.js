@@ -52,9 +52,9 @@ export const Registration = () => {
     return(
         <>
              <Container className="d-flex cont justify-content-md-center mt-5">
-                <Card style={{ width: '30rem' }}  className="justify-content-md-center text-center card1">
+                <Card style={{ width: '30rem', marginBottom: '10px' }}  className="justify-content-md-center text-center card1">
                     <Card.Body className="d-flex flex-column">
-                    <Card.Title className="mb-4">Регистрация</Card.Title>
+                    <Card.Title className="mb-4" style={{ color: '#5B69C6' }}>Регистрация</Card.Title>
                         <Form onSubmit={RegisterRequest}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Control type="name" placeholder="Никнейм" onChange={e => {setNickName(e.target.value)}}/>

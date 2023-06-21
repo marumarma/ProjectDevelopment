@@ -50,9 +50,9 @@ export const Login = () => {
     return(
         <>
              <Container className="d-flex cont justify-content-md-center mt-5">
-                <Card style={{ width: '30rem' }}  className="justify-content-md-center text-center card1">
+                <Card style={{ width: '30rem', marginBottom: '10px' }}  className="justify-content-md-center text-center card1">
                     <Card.Body className="d-flex flex-column">
-                    <Card.Title className="mb-4">Вход в систему</Card.Title>
+                    <Card.Title className="mb-4" style={{ color: '#5B69C6' }}>Вход в систему</Card.Title>
                         <Form onSubmit={LoginRequest}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Control type="email" placeholder="E-mail" onChange={e => {setEmail(e.target.value)}}/>

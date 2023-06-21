@@ -24,14 +24,14 @@ export default function NavBar() {
         <Navbar.Brand className="ms-3">TODOList</Navbar.Brand>
         <Navbar.Toggle aria-controls = "responsive-navbar-nav"/>
         <Navbar.Collapse id = "responsive-navbar-nav">
-          <Nav.Link className="ms-3"><Link to="/projects">Projects</Link></Nav.Link>
-          <Nav.Link className="ms-3"><Link to="/notifications">Notifications</Link></Nav.Link>
+          <Nav.Link className="ms-3"><Link to="/projects">Проекты</Link></Nav.Link>
+          <Nav.Link className="ms-3"><Link to="/notifications">Уведомления</Link></Nav.Link>
           <Nav.Link className="ms-3"><Link to="#">Pomodoro</Link></Nav.Link>
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end" id = "responsive-navbar-nav">
         <Nav>
-          <Nav.Link id ="user" className="bug ms-3" ><Link to="/profile">UserEmail@mail.com</Link></Nav.Link>
-          <Nav.Link id ="logout" className="bug ms-3 me-2"><Link>Exit</Link></Nav.Link></Nav>
+          <Nav.Link id ="user" className="bug ms-3" ><Link to="/profile">Профиль</Link></Nav.Link>
+          <Nav.Link id ="logout" className="bug ms-3 me-2"><Link>Выход</Link></Nav.Link></Nav>
         </Navbar.Collapse>
       </Navbar>
       </Styles>
