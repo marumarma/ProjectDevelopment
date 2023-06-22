@@ -14,18 +14,20 @@ import { Registration } from "./Components/Auth/Registration";
 import ProjectsPage from "./Components/Projects/ProjectsPage";
 import { Profile } from "./Components/Profile";
 import { Notifications } from "./Components/Notifications/NotificationsPage";
+import Pomodoro from "./Components/Pomodoro/Pomodoro";
 
 export default function App() {
   return (
     <>
     <Router>
       <Routes>
-        <Route exact path="/login" element={<Login></Login>}></Route>
+        <Route exact path="/" element={<Login></Login>}></Route>
         <Route path="/registration" element={<Registration></Registration>}></Route>
         <Route path="/projects" element={<ProjectsPage></ProjectsPage>}></Route>
         <Route path="/projects/:id" element={<TaskCard></TaskCard>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/notifications" element={<Notifications></Notifications>}></Route>
+        <Route path="/pomodoro" element={<Pomodoro></Pomodoro>}></Route>
 
       </Routes>
     </Router>

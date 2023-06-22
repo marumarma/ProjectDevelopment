@@ -76,7 +76,7 @@ export const Registration = () => {
                         <Button className="mt-3 mb-2" variant="primary" type="submit" onClick={RegisterRequest}>
                                 Register
                         </Button>
-                        <p><Link id="reg" key="reg" to={`/login`}>Log In</Link></p>
+                        <p><Link id="reg" key="reg" to={`/`}>Log In</Link></p>
                     </Card.Body>
                 </Card>
             </Container>
