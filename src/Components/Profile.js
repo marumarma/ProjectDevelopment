@@ -10,6 +10,7 @@ import {Button } from "react-bootstrap";
 import axios, { Axios } from 'axios';
 import { useEffect } from "react";
 import {Image} from "react-bootstrap";
+import NavBar from "./SideBar";
 
 export const Profile = () => {
     const[email, setEmail] = useState();
@@ -69,6 +70,7 @@ export const Profile = () => {
 
     return(
         <>
+        <NavBar email={profile.email}></NavBar>
              <Container className="d-flex cont justify-content-md-center mt-5">
                 <Card style={{ width: '30rem' }}  className=" text-center card1">
                     <Card.Body className="d-flex flex-column">

@@ -16,7 +16,7 @@ const Styles = styled.div`
         }
 }
 `
-export default function NavBar() {
+export default function NavBar(props) {
   return(
     <>
     <Styles>
@@ -30,7 +30,7 @@ export default function NavBar() {
         </Navbar.Collapse>
         <Navbar.Collapse className="justify-content-end" id = "responsive-navbar-nav">
         <Nav>
-          <Nav.Link id ="user" className="bug ms-3" ><Link to="/profile">UserEmail@mail.com</Link></Nav.Link>
+          <Nav.Link id ="user" className="bug ms-3" ><Link to="/profile">{props.email}</Link></Nav.Link>
           <Nav.Link id ="logout" className="bug ms-3 me-2"><Link>Exit</Link></Nav.Link></Nav>
         </Navbar.Collapse>
       </Navbar>

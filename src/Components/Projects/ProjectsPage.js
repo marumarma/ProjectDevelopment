@@ -7,6 +7,8 @@ import axios, { Axios } from 'axios';
 import { useEffect } from "react";
 import ModalWindow from "../Modal/ModalWindow";
 import {Button, Form, Modal, Dropdown} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import NavBar from "../SideBar";
 
 export default function ProjectsPage() {
 
@@ -18,6 +20,7 @@ export default function ProjectsPage() {
 
     const [createName, setCreateName] = useState()
     const [createDesc, setCreateDesc] = useState()
+    const [profile, setProfile] = useState([])
 
     const [modalActive, setModalActive] = useState({
         active: false,
@@ -36,6 +39,12 @@ export default function ProjectsPage() {
         .then((response) => {
             console.log(response.data)
             setProjects(response.data)
+        })
+        axios.get('https://teamtoolhosting.ru/api/auth/user', {headers: headers}
+        ).then((response) => {
+            if (response.status == 200){
+                setProfile(response.data)
+            }
         })
     }, [])
 
@@ -166,6 +175,7 @@ export default function ProjectsPage() {
 
   return(
     <>
+    <NavBar email={profile.email}></NavBar>
     <Container fluid className="d-flex cont justify-content-md-center mt-2 ">
         <Card style={{ width: '50rem', minHeight: '15rem' }} className="card1">
             <Container className="d-flex justify-content-md-center">
@@ -181,7 +191,7 @@ export default function ProjectsPage() {
                                 <Card.Body>
                                     <Row>
                                         <Col>
-                                            <Card.Title className="mt-2" id={project.id +"name"}>{project.name}</Card.Title>
+                                            <Card.Title className="mt-2" ><Link id={project.id +"name"} key={project.id} to={`/projects/${project.id}`} state={{name: project.name}}>{project.name} </Link></Card.Title>
                                         </Col>
                                         <Col>
                                             <Dropdown className="d-inline mx-2">
