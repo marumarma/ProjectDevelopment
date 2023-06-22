@@ -54,21 +54,21 @@ export const Login = () => {
     return(
         <>
              <Container className="d-flex cont justify-content-md-center mt-5">
-                <Card style={{ width: '30rem' }}  className="justify-content-md-center text-center card1">
+                <Card style={{ width: '30rem', marginTop: '10px'}}  className="justify-content-md-center text-center card1">
                     <Card.Body className="d-flex flex-column">
-                    <Card.Title className="mb-4">Log In</Card.Title>
+                    <Card.Title className="mb-4" style={{ color: '#5B69C6' }}>Log In</Card.Title>
                         <Form onSubmit={LoginRequest}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="email" placeholder="E-mail" onChange={e => {setEmail(e.target.value)}}/>
+                                <Form.Control type="email" className="customInput" placeholder="E-mail" onChange={e => {setEmail(e.target.value)}}/>
                             </Form.Group>
                     
                             <Form.Group className="mb-1" controlId="formBasicPassword">
-                                <Form.Control type="password" placeholder="Password" onChange={e => {setpassword(e.target.value)}}/>
+                                <Form.Control type="password" className="customInput" placeholder="Password" onChange={e => {setpassword(e.target.value)}}/>
                             </Form.Group>
                             <Form.Text id= "err" className="text-danger">
                             </Form.Text>
                         </Form>
-                        <Button className="mt-3 mb-2" variant="primary" type="submit" onClick={LoginRequest}>
+                        <Button className="mt-3 mb-2" variant="blue" type="submit" onClick={LoginRequest}>
                                 Go
                         </Button>
                         <p><Link id="reg" key="reg" to={`/registration`}>Registration</Link></p>

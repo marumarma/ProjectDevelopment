@@ -55,21 +55,21 @@ export default function ProjectsPage() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>New project</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>New project</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Name" className="mb-3" onChange={e => {setCreateName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Name" className="mb-3 customInput" onChange={e => {setCreateName(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
-                            <Form.Control placeholder="Description" onChange={e => {setCreateDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Description" className="customInput" onChange={e => {setCreateDesc(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  CreateProject()}>
+                        <Button variant="pink" onClick={() =>  CreateProject()}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -80,21 +80,21 @@ export default function ProjectsPage() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Edit project "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Edit project "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="New name" className="mb-3" onChange={e => {setNewName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="New name" className="mb-3 customInput" onChange={e => {setNewName(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
-                            <Form.Control placeholder="New description" onChange={e => {setNewDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="New description" className="customInput" onChange={e => {setNewDesc(e.target.value)}}></Form.Control>
                             <Form.Text className="text-danger" id="newnameerr"></Form.Text>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  EditProject(id)}>
+                        <Button variant="green" onClick={() =>  EditProject(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -106,13 +106,13 @@ export default function ProjectsPage() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Are you sure that you want to delete project "{name}"?</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Are you sure that you want to delete project "{name}"?</Modal.Title>
                     </Modal.Header>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  DeleteProject(id)}>
+                        <Button variant="red" onClick={() =>  DeleteProject(id)}>
                         Yes
                         </Button>
                     </Modal.Footer>
@@ -180,10 +180,10 @@ export default function ProjectsPage() {
         <Card style={{ width: '50rem', minHeight: '15rem' }} className="card1">
             <Container className="d-flex justify-content-md-center">
                     <Col>
-                        <Row>
+                        <Row  style={{marginTop: '10px', marginLeft: '5px'}}>
                             <h2>My projects <span onClick={() => setModalActive({active: true, type: "create"})} class="pointer">+</span></h2>
                         </Row>
-                        <Row xs={1} md={2} className="" style={{width: '40rem'}}>
+                        <Row xs={1} md={2} className="" style={{width: '50rem'}}>
                         
                         {projects?.map((project, idx) => (
                             <Col key={idx}>
@@ -195,7 +195,7 @@ export default function ProjectsPage() {
                                         </Col>
                                         <Col>
                                             <Dropdown className="d-inline mx-2">
-                                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-autoclose-true">
+                                            <Dropdown.Toggle variant="white" id="dropdown-autoclose-true">
                                             Actions
                                             </Dropdown.Toggle>
 

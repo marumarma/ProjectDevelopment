@@ -321,7 +321,7 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Invite user to project "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Invite user to project "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
@@ -337,10 +337,10 @@ export default function TaskCard() {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  AddMember()}>
+                        <Button variant="pink" onClick={() =>  AddMember()}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -351,7 +351,7 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Edit project "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Edit project "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
@@ -360,10 +360,10 @@ export default function TaskCard() {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  EditProject()}>
+                        <Button variant="green" onClick={() =>  EditProject()}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -374,13 +374,13 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Are you sure that you want to delete project "{name}"?</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Are you sure that you want to delete project "{name}"?</Modal.Title>
                     </Modal.Header>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  DeleteProject()}>
+                        <Button variant="red" onClick={() =>  DeleteProject()}>
                         Delete
                         </Button>
                     </Modal.Footer>
@@ -391,18 +391,18 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Add tew task</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Add tew task</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Name" className="mb-3" onChange={e => {setTaskName(e.target.value)}}></Form.Control>
-                            <Form.Control placeholder="Description" className="mb-3" onChange={e => {setTaskDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Name" className="mb-3 customInput" onChange={e => {setTaskName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Description" className="mb-3 customInput" onChange={e => {setTaskDesc(e.target.value)}}></Form.Control>
                             <Form.Label>Start date:</Form.Label>
-                            <Form.Control placeholder="" type="date" className="mb-3" onChange={e => {setTaskCreationDate(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="" type="date" className="mb-3 customInput" onChange={e => {setTaskCreationDate(e.target.value)}}></Form.Control>
                             <Form.Label>Deadline:</Form.Label>
-                            <Form.Control placeholder="" type="date" className="mb-3" onChange={e => {setTaskDeadline(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="" type="date" className="mb-3 customInput" onChange={e => {setTaskDeadline(e.target.value)}}></Form.Control>
                             <Form.Label>Choose category:</Form.Label>
-                            <Form.Select aria-label="email" value={category} onChange={categoryChange}>
+                            <Form.Select aria-label="email" value={category} className="customInput" onChange={categoryChange}>
                                 {
                                     categoryList?.map((categ) =>
                                         <option value={categ.id}>{categ.name}</option>
@@ -412,10 +412,10 @@ export default function TaskCard() {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  CreateTask(id)}>
+                        <Button variant="blue" onClick={() =>  CreateTask(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -426,12 +426,12 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Add performer to task "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Add performer to task "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
                             <Form.Label>Choose user:</Form.Label>
-                            <Form.Select aria-label="email" value={addedUsers} onChange={addedUsersChange}>
+                            <Form.Select aria-label="email" className="customInput" value={addedUsers} onChange={addedUsersChange}>
                             <option value=""> </option>
                                 {
                                     
@@ -447,10 +447,10 @@ export default function TaskCard() {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  AddPerformer(id)}>
+                        <Button variant="pink" onClick={() =>  AddPerformer(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -461,11 +461,11 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Change status of task "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Change status of task "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Select aria-label="email" value={todoStatus} onChange={todoStatusChange}>
+                            <Form.Select aria-label="email" className="customInput" value={todoStatus} onChange={todoStatusChange}>
                                 <option value=""></option>
                                 <option value="InProcess">In process</option>
                                 <option value="Finished">Done</option>
@@ -475,10 +475,10 @@ export default function TaskCard() {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  ChangeStatus(id)}>
+                        <Button variant="green" onClick={() =>  ChangeStatus(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -489,21 +489,21 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Change status of task "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Change status of task "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Select aria-label="email" value={todoStatus} onChange={todoStatusChange}>
+                            <Form.Select aria-label="email" className="customInput" value={todoStatus} onChange={todoStatusChange}>
                                 <option value=""></option>
                                 <option value="Finished">Done</option>
                             </Form.Select>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  ChangeStatus(id)}>
+                        <Button variant="pink" onClick={() =>  ChangeStatus(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -514,11 +514,11 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Change progress of task "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Change progress of task "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Select aria-label="email" value={progress} onChange={progressChange}>
+                            <Form.Select aria-label="email" className="customInput" value={progress} onChange={progressChange}>
                                 <option value=""></option>
                                 <option value="0">0%</option>
                                 <option value="10">10%</option>
@@ -535,10 +535,10 @@ export default function TaskCard() {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  ChangeProgress(id)}>
+                        <Button variant="blue" onClick={() =>  ChangeProgress(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -549,18 +549,18 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Edit task "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Edit task "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Name" onChange={e => {setTaskName(e.target.value)}}></Form.Control>
-                            <Form.Control placeholder="Description" onChange={e => {setTaskDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Name" className="customInput" onChange={e => {setTaskName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Description" className="customInput" onChange={e => {setTaskDesc(e.target.value)}}></Form.Control>
                             <Form.Label>Creation date:</Form.Label>
-                            <Form.Control placeholder="" type="date"onChange={e => {setTaskCreationDate(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="" type="date" className="customInput" onChange={e => {setTaskCreationDate(e.target.value)}}></Form.Control>
                             <Form.Label >Deadline:</Form.Label>
-                            <Form.Control placeholder="" type="date" onChange={e => {setTaskDeadline(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="" type="date" className="customInput" onChange={e => {setTaskDeadline(e.target.value)}}></Form.Control>
                             <Form.Label>Choose category:</Form.Label>
-                            <Form.Select aria-label="email" value={category} onChange={categoryChange}>
+                            <Form.Select aria-label="email" className="customInput" value={category} onChange={categoryChange}>
                                 {
                                     categoryList?.map((categ) =>
                                         <option value={categ.id}>{categ.name}</option>
@@ -568,7 +568,7 @@ export default function TaskCard() {
                                 }
                             </Form.Select>
                             <Form.Label>Choose status:</Form.Label>
-                            <Form.Select aria-label="email" value={editStatus} onChange={editStatusChange}>
+                            <Form.Select aria-label="email" className="customInput" value={editStatus} onChange={editStatusChange}>
                                 <option value=""></option>
                                 <option value="Created">To do</option>
                                 <option value="InProcess">In process</option>
@@ -577,17 +577,17 @@ export default function TaskCard() {
                                 
                             </Form.Select>
                             <Form.Label>Choose progress:</Form.Label>
-                            <Form.Select aria-label="email" value={progress} onChange={progressChange}>
+                            <Form.Select aria-label="email" className="customInput" value={progress} onChange={progressChange}>
                                 <option value=""></option>
                                 <option value="0">0%</option>
                             </Form.Select>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  EditTask(id)}>
+                        <Button variant="green" onClick={() =>  EditTask(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -598,18 +598,18 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Edit task "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Edit task "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Name" onChange={e => {setTaskName(e.target.value)}}></Form.Control>
-                            <Form.Control placeholder="Description" onChange={e => {setTaskDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Name" className="customInput" onChange={e => {setTaskName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Description" className="customInput" onChange={e => {setTaskDesc(e.target.value)}}></Form.Control>
                             <Form.Label>Creation date:</Form.Label>
-                            <Form.Control placeholder="" type="date"onChange={e => {setTaskCreationDate(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="" type="date" className="customInput" onChange={e => {setTaskCreationDate(e.target.value)}}></Form.Control>
                             <Form.Label >Deadline:</Form.Label>
-                            <Form.Control placeholder="" type="date" onChange={e => {setTaskDeadline(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="" type="date" className="customInput" onChange={e => {setTaskDeadline(e.target.value)}}></Form.Control>
                             <Form.Label>Choose category:</Form.Label>
-                            <Form.Select aria-label="email" value={category} onChange={categoryChange}>
+                            <Form.Select aria-label="email" className="customInput" value={category} onChange={categoryChange}>
                                 {
                                     categoryList?.map((categ) =>
                                         <option value={categ.id}>{categ.name}</option>
@@ -617,7 +617,7 @@ export default function TaskCard() {
                                 }
                             </Form.Select>
                             <Form.Label>Choose status:</Form.Label>
-                            <Form.Select aria-label="email" value={editStatus} onChange={editStatusChange}>
+                            <Form.Select aria-label="email" className="customInput" value={editStatus} onChange={editStatusChange}>
                                 <option value=""></option>
                                 <option value="InProcess">In process</option>
                                 <option value="Finished">Done</option>
@@ -625,7 +625,7 @@ export default function TaskCard() {
                                 
                             </Form.Select>
                             <Form.Label>Choose progress:</Form.Label>
-                            <Form.Select aria-label="email" value={progress} onChange={progressChange}>
+                            <Form.Select aria-label="email" className="customInput" value={progress} onChange={progressChange}>
                                 <option value=""></option>
                                 <option value="0">0%</option>
                                 <option value="10">10%</option>
@@ -642,10 +642,10 @@ export default function TaskCard() {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  EditTask(id)}>
+                        <Button variant="green" onClick={() =>  EditTask(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -656,18 +656,18 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Edit task "{name}"</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Edit task "{name}"</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Name" onChange={e => {setTaskName(e.target.value)}}></Form.Control>
-                            <Form.Control placeholder="Description" onChange={e => {setTaskDesc(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Name" className="customInput" onChange={e => {setTaskName(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Description" className="customInput" onChange={e => {setTaskDesc(e.target.value)}}></Form.Control>
                             <Form.Label>Creation date:</Form.Label>
-                            <Form.Control placeholder="" type="date"onChange={e => {setTaskCreationDate(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="" type="date" className="customInput"onChange={e => {setTaskCreationDate(e.target.value)}}></Form.Control>
                             <Form.Label >Deadline:</Form.Label>
-                            <Form.Control placeholder="" type="date" onChange={e => {setTaskDeadline(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="" type="date" className="customInput" onChange={e => {setTaskDeadline(e.target.value)}}></Form.Control>
                             <Form.Label>Choose category:</Form.Label>
-                            <Form.Select aria-label="email" value={category} onChange={categoryChange}>
+                            <Form.Select aria-label="email" className="customInput" value={category} onChange={categoryChange}>
                                 {
                                     categoryList?.map((categ) =>
                                         <option value={categ.id}>{categ.name}</option>
@@ -675,24 +675,24 @@ export default function TaskCard() {
                                 }
                             </Form.Select>
                             <Form.Label>Choose status:</Form.Label>
-                            <Form.Select aria-label="email" value={editStatus} onChange={editStatusChange}>
+                            <Form.Select aria-label="email" className="customInput" value={editStatus} onChange={editStatusChange}>
                                 <option value=""></option>
                                 <option value="Finished">Done</option>
                                     
                                 
                             </Form.Select>
                             <Form.Label>Choose progress:</Form.Label>
-                            <Form.Select aria-label="email" value={progress} onChange={progressChange}>
+                            <Form.Select aria-label="email" className="customInput" value={progress} onChange={progressChange}>
                                 <option value=""></option>
                                 <option value="100">100%</option>
                             </Form.Select>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  EditTask(id)}>
+                        <Button variant="blue" onClick={() =>  EditTask(id)}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -703,13 +703,13 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Are you sure that you want to delete task "{name}"?</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Are you sure that you want to delete task "{name}"?</Modal.Title>
                     </Modal.Header>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  DeleteTask(id)}>
+                        <Button variant="red" onClick={() =>  DeleteTask(id)}>
                         Delete
                         </Button>
                     </Modal.Footer>
@@ -720,18 +720,18 @@ export default function TaskCard() {
             return(
                 <>
                     <Modal.Header>
-                     <Modal.Title>Add new category</Modal.Title>
+                     <Modal.Title style={{ color: '#5B69C6' }}>Add new category</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
-                            <Form.Control placeholder="Name" className="mb-3" onChange={e => {setNewCategory(e.target.value)}}></Form.Control>
+                            <Form.Control placeholder="Name" className="mb-3 customInput" onChange={e => {setNewCategory(e.target.value)}}></Form.Control>
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="outline-secondary" onClick={() => setModalActive({active: false})}>
+                        <Button variant="white" onClick={() => setModalActive({active: false})}>
                         Cancel
                         </Button>
-                        <Button variant="secondary" onClick={() =>  CreateCategory()}>
+                        <Button variant="pink" onClick={() =>  CreateCategory()}>
                         Save 
                         </Button>
                     </Modal.Footer>
@@ -819,7 +819,7 @@ export default function TaskCard() {
                                                         <Card.Title className="fs-4">{task.name}</Card.Title>
                                                         </Col>
                                                         <Col>
-                                                            <DropdownButton id="dropdown-basic-button" title="" variant="outline-secondary">
+                                                            <DropdownButton id="dropdown-basic-button" title="" variant="white">
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "addperformer", itemId: task.id})}>Add performer +</Dropdown.Item>
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "changestatustodo", itemId: task.id})}>Change status</Dropdown.Item>
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "edittodo", itemId: task.id})}>Edit</Dropdown.Item>
@@ -871,7 +871,7 @@ export default function TaskCard() {
                                                         <Card.Title className="fs-4">{task.name}</Card.Title>
                                                         </Col>
                                                         <Col>
-                                                            <DropdownButton id="dropdown-basic-button" title="" variant="outline-secondary">
+                                                            <DropdownButton id="dropdown-basic-button" title="" variant="white">
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "addperformer", itemId: task.id})}>Add performer +</Dropdown.Item>
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "changestatusinprocess", itemId: task.id})}>Change status</Dropdown.Item>
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "changeprogress", itemId: task.id})}>Change progress</Dropdown.Item>
@@ -922,7 +922,7 @@ export default function TaskCard() {
                                                         <Card.Title className="fs-4">{task.name}</Card.Title>
                                                         </Col>
                                                         <Col>
-                                                            <DropdownButton id="dropdown-basic-button" title="" variant="outline-secondary">
+                                                            <DropdownButton id="dropdown-basic-button" title="" variant="white">
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "addperformer", itemId: task.id})}>Add performer +</Dropdown.Item>
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "editdone", itemId: task.id})}>Edit</Dropdown.Item>
                                                             <Dropdown.Item onClick={() => setModalActive({active: true, itemName: task.name, type: "deletetask", itemId: task.id})}>Delete</Dropdown.Item>

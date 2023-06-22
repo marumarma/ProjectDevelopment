@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import '../../Components/custom.css'
 import { Card, Container, Row, Col, Badge, ProgressBar, Image, Tooltip, ListGroupItem } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { isEmpty } from "lodash";
@@ -43,8 +43,15 @@ export default function Pomodoro(){
     return(
         <>
         <NavBar email={profile.email}></NavBar>
-            <h1>Pomodoro Timer</h1>
-        <CountDown minutes={25} seconds={0}></CountDown>
+            <Container className="d-flex cont justify-content-md-center mt-5">
+                <Card style={{ width: '50rem', minHeight: '15rem' }} className="card1">
+                    <Card.Body className="d-flex flex-column">
+                        <h1 style={{ color: '#5B69C6' }}>Pomodoro Timer</h1>
+                        <CountDown minutes={25} seconds={0}></CountDown>
+                    </Card.Body>
+                </Card>
+
+            </Container>
         </>
     )
 }

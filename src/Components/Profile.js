@@ -84,15 +84,15 @@ export const Profile = () => {
                             </Row>
                             </Container>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Control type="name" placeholder={profile.nickname} onChange={e => {setNickname(e.target.value)}}/>
+                                <Form.Control type="name" className="customInput" placeholder={profile.nickname} onChange={e => {setNickname(e.target.value)}}/>
                             </Form.Group>
                             <Form.Group className="mb-1" controlId="formBasicPassword">
-                                <Form.Control type="name" placeholder={"Ссылка на аватар: " + profile.image} onChange={e => {setImage(e.target.value)}}/>
+                                <Form.Control type="name" className="customInput" placeholder={"Ссылка на аватар: " + profile.image} onChange={e => {setImage(e.target.value)}}/>
                             </Form.Group>
                             <Form.Text id= "err" className="text-danger">
                             </Form.Text>
                         </Form>
-                        <Button className="mt-3 mb-2" variant="primary" type="submit" onClick={() => EditProfile()}>
+                        <Button className="mt-3 mb-2" variant="blue" type="submit" onClick={() => EditProfile()}>
                                 Сохранить
                         </Button>
                     </Card.Body>

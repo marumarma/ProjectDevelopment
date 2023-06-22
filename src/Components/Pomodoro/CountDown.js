@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import bell from "../bell.mp3"
+import {Button, Card, Modal, Dropdown} from "react-bootstrap";
 
 export const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
     const [paused, setPaused] = React.useState(true);
@@ -55,10 +56,10 @@ export const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
           .toString()
           .padStart(2, '0')}:${s.toString().padStart(2, '0')}`}</p>
         <div>{over ? "Time's up!" : ''}</div>
-        <button onClick={() => setPaused(!paused)}>
+        <Button variant="green" onClick={() => setPaused(!paused)}>
           {paused ? 'Start' : 'Pause'}
-        </button>
-        <button onClick={() => reset()}>Restart</button>
+        </Button>
+        <Button variant="red" style={{ marginLeft:"5px" }} onClick={() => reset()}>Restart</Button>
       </div>
     );
   };
